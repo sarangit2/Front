@@ -1,0 +1,139 @@
+mat-sidenav-container {
+    height: 100%;
+    width: 100%;
+    background-color: #888888; /* Couleur de fond du conteneur */
+  }
+  .toolbar-container{
+    display: none;
+  }
+  mat-toolbar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+   
+    margin: 20px;
+    border-radius: 10px;
+  }
+  
+  .header-toolbar {
+    background-color: #fff;
+    color: #000;
+   
+    border-radius: 10px;
+    width: 250px;
+  }
+  
+  .header-title {
+    font-size: 1rem;
+  }
+  
+  mat-form-field {
+   
+    height: 55px;
+    border-radius: 10px;
+  }
+  
+  .profile-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .content {
+    padding: 16px;
+  }
+  
+  .toolbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Pour la grille générale */
+    gap: 16px;
+  }
+  
+  .welcome-section {
+    grid-column: span 2;
+    text-align: center;
+  }
+  
+  .stats-section {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .stat {
+    display: flex;
+    align-items: center;
+  }
+  
+  .stat mat-icon {
+    font-size: 40px;
+    margin-right: 8px;
+    color: #FF7A28; /* Couleur orange pour les icônes dans la section stats */
+  }
+  
+  .recent-events-section, .chart-section {
+    grid-column: span 2;
+  }
+  
+  .recent-events-section .event {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .recent-events-section .event img {
+    width: 100px;
+    height: 100px;
+    margin-right: 16px;
+  }
+  
+  .recent-events-section .event button {
+    margin-left: auto;
+  }
+  
+  /* Couleur orange pour les icônes dans la barre latérale */
+  .mat-sidenav mat-icon, .mat-sidenav a mat-icon {
+    color: #FF7A28;
+  }
+  
+  /* Ajuster la largeur de la barre latérale */
+  .mat-sidenav {
+    width: 250px;
+  }
+  
+  /* Ajouter de l'espace entre les icônes et le texte dans la barre latérale */
+  .mat-sidenav a {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    padding: 8px 16px; /* Ajuster selon vos besoins */
+    text-decoration: none; /* Enlever la décoration des liens */
+  }
+  
+  /* Ajouter de l'espace entre l'icône et le texte dans la barre latérale */
+  .mat-sidenav a mat-icon {
+    font-size: 28px; /* Ajuster selon vos besoins */
+    margin-right: 25px; /* Espace entre l'icône et le texte */
+  }
+  
+  /* Ajuster l'affichage côte à côte pour le calendrier et les événements récents */
+  .calendar-events-container {
+    display: flex;
+    gap: 16px; /* Espace entre le calendrier et les événements récents */
+  }
+  
+  .calendar {
+    max-width: 600px; /* Ajuster la largeur maximale du calendrier */
+  }
+  
+  .recent-events-section {
+    flex: 1; /* Permet à la section des événements récents de prendre tout l'espace disponible */
+  }
+  

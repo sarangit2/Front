@@ -1,0 +1,105 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+      <mat-toolbar color="primary" style="margin: 30px; margin-left: 10px;">
+        <img src="assets/img/logo.svg" class="sidebar-logo" alt="Logo">
+      </mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/accueil">
+          <mat-icon>home</mat-icon>
+          <span>Accueil</span>
+        </a>
+        <a mat-list-item routerLink="/prestataires">
+          <mat-icon>people</mat-icon>
+          <span>Prestataires</span>
+        </a>
+        <a mat-list-item routerLink="/evenements">
+          <mat-icon>event</mat-icon>
+          <span>Événements</span>
+        </a>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-icon>local_shipping</mat-icon>
+            <span>Logistique</span>
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <a mat-list-item routerLink="/equipement">
+              <mat-icon>construction</mat-icon>
+              <span>Équipement</span>
+            </a>
+            <a mat-list-item routerLink="/lieu">
+              <mat-icon>place</mat-icon>
+              <span>Lieu</span>
+            </a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+        <a mat-list-item routerLink="/utilisateurs">
+          <mat-icon>person</mat-icon>
+          <span>Utilisateurs</span>
+        </a>
+        <a mat-list-item routerLink="/reglages">
+          <mat-icon>settings</mat-icon>
+          <span>Réglages</span>
+        </a>
+        <a mat-list-item routerLink="/deconnexion" style="margin-top: 100px; border: 1px solid; width: 200px;">
+          <mat-icon>logout</mat-icon>
+          <span>Déconnexion</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="toolbar-container">
+        <mat-toolbar color="primary" class="header-toolbar">
+          <mat-form-field appearance="outline">
+            <mat-label>Recherche...</mat-label>
+            <input matInput type="text">
+            <button mat-icon-button matSuffix>
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+        </mat-toolbar>
+        <mat-toolbar color="primary" class="header-toolbar">
+          <button mat-icon-button>
+            <mat-icon>notifications</mat-icon>
+          </button>
+        </mat-toolbar>
+        <mat-toolbar color="primary" class="header-toolbar">
+          <button mat-button [matMenuTriggerFor]="menu">
+            <img src="path/to/profile-image.jpg" alt="Profile" class="profile-image">
+            Mody Barry
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Profile</button>
+            <button mat-menu-item>Logout</button>
+          </mat-menu>
+        </mat-toolbar>
+      </div>
+      <div class="content">
+        <div class="dashboard">
+          <div class="welcome-section">
+            <h2>Bonjour, M. Barry</h2>
+            <p>Ayez une bonne journée!</p>
+          </div>
+          <div class="calendar-events-container">
+            <mat-calendar class="calendar"></mat-calendar>
+            <div class="recent-events-section">
+              <h3>Événements récents</h3>
+              <div class="event" *ngFor="let event of recentEvents">
+                <img [src]="event.image" alt="Event image">
+                <div>
+                  <h4>{{ event.name }}</h4>
+                  <p>{{ event.location }}</p>
+                  <p>{{ event.date }} - {{ event.time }}</p>
+                </div>
+                <button mat-raised-button color="primary">Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="chart-section">
+            <h3>Event Chart</h3>
+            <!-- Include your chart here -->
+          </div>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

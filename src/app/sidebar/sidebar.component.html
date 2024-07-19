@@ -1,0 +1,67 @@
+
+<button mat-mini-fab (click)="toggleDrawer()" color="warn" class="toggle-button">
+  <mat-icon aria-label="Toggle drawer">menu</mat-icon>
+</button>
+
+<mat-drawer #drawer mode="side" disableClose="true" [opened]="true" class="sidebar" >
+  <img src="assets/img/logo.svg" class="sidebar-logo" alt="Logo">
+ 
+ 
+    <ul>
+     
+      <li>
+        <a routerLink="/accueil" routerLinkActive="active">
+          <span class="menu-icon material-icons">grade</span>
+          <span class="menu-text">Accueil</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/utilisateurs" routerLinkActive="active">
+          <span class="menu-icon material-icons">grade</span>
+          <span class="menu-text">Utilisateurs</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/Prestateurs" routerLinkActive="active">
+          <span class="menu-icon material-icons">schedule</span>
+          <span class="menu-text">Prestateurs</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/Evenement" routerLinkActive="active">
+          <span class="menu-icon material-icons">access_time</span>
+          <span class="menu-text">Evenement</span>
+        </a>
+      </li>
+      <li>
+        <a routerLinkActive="active" (click)="toggleSubmenu()">
+          <span class="menu-icon material-icons">dashboard</span>
+          <span class="menu-text">Logistique</span>
+          <span class="sub-menu-icon" [ngClass]="{ 'sub-menu-open': isSubmenuOpen }">
+            <mat-icon>{{ isSubmenuOpen ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}</mat-icon>
+          </span>
+        </a>
+        <!-- Sub-menu for Dashboard with left padding -->
+        <ul *ngIf="isSubmenuOpen" class="sub-menu">
+          <li><a routerLink="/equipement" routerLinkActive="active"><span class="menu-icon material-icons">details</span><span class="menu-text">Equipement</span></a></li>
+          <li><a routerLink="/lieu" routerLinkActive="active"><span class="menu-icon material-icons">message</span><span class="menu-text">Lieu</span></a></li>
+        </ul>
+      </li>
+      
+      <li>
+        <a routerLink="/Reglage" routerLinkActive="active">
+          <span class="menu-icon material-icons">settings</span>
+          <span class="menu-text">Reglages</span>
+        </a>
+      </li>
+
+      <li style="margin-top: 60px;  ">
+        <a routerLink="/logout" routerLinkActive="active" style="padding-left: 1px; border:  solid #ff7700;">
+          <span class="menu-icon material-icons">settings</span>
+          <span class="menu-text">Deconnexion</span>
+        </a>
+      </li>
+    </ul>
+ 
+   
+</mat-drawer>
